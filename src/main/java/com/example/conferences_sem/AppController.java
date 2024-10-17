@@ -17,14 +17,14 @@ import java.util.List;
 public class AppController {
 
     @Autowired
-    private BarbService service;
+    private ConfService service;
 
     @RequestMapping("/")
     public String viewHomePage(Model model, @Param("keyword") String keyword) {
-        List<Barbershop> listClients = service.listAll(keyword);
-        model.addAttribute("listClients", listClients);
+        List<Conferences> listConf = service.listAll(keyword);
+        model.addAttribute("listConf", listConf);
         model.addAttribute("keyword", keyword);
-        Integer average = service.averageClients();
+        Integer average = service.averageConfs();
         if (average == -1) {
             model.addAttribute("average", 0);
         } else {
@@ -35,35 +35,35 @@ public class AppController {
 
     @RequestMapping("/filterByDate")
     public String filterByDate(Model model, @Param("date") java.sql.Date date) {
-        List<Barbershop> listClients = service.filterByDate(date);
-        model.addAttribute("listClients", listClients);
+        List<Conferences> listConf = service.filterByDate(date);
+        model.addAttribute("listConf", listConf);
         model.addAttribute("date", date);
         return "index";
     }
 
     @RequestMapping("/new")
-    public String showNewClientForm(Model model) {
-        Barbershop client = new Barbershop();
-        model.addAttribute("client", client);
-        return "new_client";
+    public String showNewConfForm(Model model) {
+        Conferences conf = new Conferences();
+        model.addAttribute("conf", conf);
+        return "new_conf";
     }
 
     @RequestMapping(value = "/save", method = RequestMethod.POST)
-    public String saveClient(@ModelAttribute("play") Barbershop barb) {
-        service.save(barb);
+    public String saveConf(@ModelAttribute("conf") Conferences conf) {
+        service.save(conf);
         return "redirect:/";
     }
 
     @RequestMapping("/edit/{id}")
-    public ModelAndView showEditClientForm(@PathVariable(name = "id") Long id) {
-        ModelAndView mav = new ModelAndView("edit_client");
-        Barbershop client = service.get(id);
-        mav.addObject("client", client);
+    public ModelAndView showEditConfForm(@PathVariable(name = "id") Long id) {
+        ModelAndView mav = new ModelAndView("edit_conf");
+        Conferences conf = service.get(id);
+        mav.addObject("conf", conf);
         return mav;
     }
 
     @RequestMapping("/delete/{id}")
-    public String deleteClient(@PathVariable(name = "id") Long id) {
+    public String deleteConf(@PathVariable(name = "id") Long id) {
         service.delete(id);
         return "redirect:/";
     }

@@ -9,31 +9,30 @@
 </head>
 <body>
 <div class="bg-image">
-<!--     style="background-image: url('https://palchevsky.ru/images/background.jpg'); height: 100vh; overflow: auto">-->
-    <blockquote class="blockquote text-center"><h1>Редактирование данных клиента</h1></blockquote>
+    <blockquote class="blockquote text-center"><h1>Редактирование данных конференции</h1></blockquote>
     <div class="row">
         <div class="col-md-8 offset-md-4">
-            <form action="#" th:action="@{/save}" th:object="${client}" method="post">
+            <form action="#" th:action="@{/save}" th:object="${conf}" method="post">
                 <table>
                     <tr>
                         <td>ID:</td>
                          <td><input placeholder="ID" type="text" th:field="*{id}" readonly="readonly"></td>  <!-- ?????????????????????????????????????????????????  -->
                     </tr>
                     <tr>
-                        <td>ФИО:</td>
-                        <td><input placeholder="ФИО" type="text" th:field="*{name}"></td>
+                        <td>Название:</td>
+                        <td><input placeholder="Название" type="text" th:field="*{conf_name}"></td>
                     </tr>
                     <tr>
                         <td>Дата:</td>
                         <td><input placeholder="Дата" type="text" th:field="*{date}"></td>
                     </tr>
                     <tr>
-                        <td>Услуга:</td>
-                        <td><input placeholder="Услуга" type="text" th:field="*{service}"></td>
+                        <td>ФИО модератора:</td>
+                        <td><input placeholder="ФИО модератора" type="text" th:field="*{moder_name}"></td>
                     </tr>
                     <tr>
-                        <td>Мастер:</td>
-                        <td><input placeholder="Мастер" type="text" th:field="*{master}"></td>
+                        <td>ФИО спикера:</td>
+                        <td><input placeholder="Мастер" type="text" th:field="*{speaker_name}"></td>
                     </tr>
                     <tr>
                         <td colspan="2">

@@ -12,26 +12,26 @@ import java.io.IOException;
 import java.util.List;
 
 @Service
-public class BarbService {
+public class ConfService {
     @Autowired
-    private BarbRepository repo;
+    private ConfRepository repo;
 
-    public List<Barbershop> listAll(String keyword) {
+    public List<Conferences> listAll(String keyword) {
         if (keyword != null) {
             return repo.search(keyword);
         }
         return repo.findAll();
     }
 
-    public List<Barbershop> filterByDate(java.sql.Date date) {
+    public List<Conferences> filterByDate(java.sql.Date date) {
         return repo.findByDate(date);
     }
 
-    public void save(Barbershop barbershop) {
-        repo.save(barbershop);
+    public void save(Conferences conf) {
+        repo.save(conf);
     }
 
-    public Barbershop get(Long id) {
+    public Conferences get(Long id) {
         return repo.findById(Math.toIntExact(id)).get();
     }
 
@@ -42,18 +42,18 @@ public class BarbService {
     public String generateBarChart() throws IOException {
         DefaultCategoryDataset dataset = new DefaultCategoryDataset();
 
-        List<Object[]> playData = repo.countByDayChart();
+        List<Object[]> confData = repo.countByDayChart();
 
-        for (Object[] data : playData) {
+        for (Object[] data : confData) {
             String date = data[0].toString();
             Long count = (Long) data[1];
             dataset.addValue(count, "Кол-во", date);
         }
 
         JFreeChart chart = ChartFactory.createBarChart(
-                "Количество записей клиентов по дням",
+                "Количество конференций по дням",
                 "Даты",
-                "Количество клиентов",
+                "Количество конференций",
                 dataset
         );
 
@@ -62,7 +62,7 @@ public class BarbService {
         return "/images/bar_chart.png";
     }
 
-    public Integer averageClients() {
+    public Integer averageConfs() {
         if (repo.count() > 0) {
             int av = (int) Math.floor(repo.countId() / repo.countDates());
             return av;
