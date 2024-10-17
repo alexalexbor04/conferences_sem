@@ -4,7 +4,7 @@ create table conferences (
                              date date not null,
                              moder_name varchar(255) not null,
                              speaker_name varchar(255) not null,
-                             primary key (id)
+                           primary key (id)
 ) engine = InnoDB default charset = UTF8;
 
 INSERT INTO conferences (conf_name, date, moder_name, speaker_name) VALUES
@@ -18,7 +18,7 @@ INSERT INTO conferences (conf_name, date, moder_name, speaker_name) VALUES
     ('Marketing & Sales Symposium', '2024-11-02', 'Nikitin Savva Lvovich', 'Gromov Mikhail Maksimovich'),
     ('Startup & Entrepreneurs Meet', '2024-11-03', 'Filippov Pavel Kirillovich', 'speaker_name9'),
     ('Tech for Good', '2024-11-04', 'Dolgov Nikolay Fedorovich', 'Voronov Pavel Romanovich'),
-    ('Future of Healthcare', '2024-11-05', 'Panteleev Alexey Bogdanovich', 'Noskov Mark Sergeevich'),
+    ('Future of Healthcare', '2024-11-01', 'Panteleev Alexey Bogdanovich', 'Noskov Mark Sergeevich'),
     ('AI and Business Transformation', '2024-11-06', 'Kotov Maxim Ilyich', 'Dubov Kirill Maksimovich'),
     ('Sustainability in Business', '2024-11-01', 'Nikitin Savva Lvovich', 'Sokolov Rodion Artemovich'),
     ('Cybersecurity Conference', '2024-11-02', 'Filippov Pavel Kirillovich', 'Fedotov Mikhail Pavlovich'),
@@ -41,20 +41,22 @@ INSERT INTO conferences (conf_name, date, moder_name, speaker_name) VALUES
     ('International Space Conference', '2024-11-01', 'Panteleev Alexey Bogdanovich', 'Fedotov Alexey Mikhailovich'),
     ('Global Entrepreneurship Forum', '2024-11-02', 'Kotov Maxim Ilyich', 'Sudakov Alexander Matveyevich'),
     ('Smart Healthcare Expo', '2024-11-03', 'Nikitin Savva Lvovich', 'Isaev Savva Georgievich'),
-    ('Future of Work Summit', '2024-11-04', 'Filippov Pavel Kirillovich', 'Bogdanov Matvey Arsentievich'),
+    ('Future of Work Summit', '2024-11-06', 'Filippov Pavel Kirillovich', 'Bogdanov Matvey Arsentievich'),
     ('Telecom Innovation Conference', '2024-11-05', 'Dolgov Nikolay Fedorovich', 'Nikiforov Alexander Andreevich'),
     ('Ethical AI Forum', '2024-11-06', 'Panteleev Alexey Bogdanovich', 'Orlov Mark Sergeevich'),
     ('Wearable Technology Summit', '2024-11-01', 'Kotov Maxim Ilyich', 'Kovalev Arseniy Alexandrovich'),
     ('Autonomous Vehicles Conference', '2024-11-02', 'Nikitin Savva Lvovich', 'Gromov Mikhail Maksimovich'),
     ('SaaS & Cloud Computing Forum', '2024-11-03', 'Filippov Pavel Kirillovich', 'speaker_name9'),
     ('Digital Health Summit', '2024-11-04', 'Dolgov Nikolay Fedorovich', 'Voronov Pavel Romanovich'),
-    ('Global Leadership Forum', '2024-11-05', 'Panteleev Alexey Bogdanovich', 'Noskov Mark Sergeevich'),
+    ('Global Leadership Forum', '2024-11-01', 'Panteleev Alexey Bogdanovich', 'Noskov Mark Sergeevich'),
     ('Sustainable Agriculture Conference', '2024-11-06', 'Kotov Maxim Ilyich', 'Dubov Kirill Maksimovich'),
     ('AI & Robotics Conference', '2024-11-01', 'Nikitin Savva Lvovich', 'Sokolov Rodion Artemovich'),
     ('Future Mobility Summit', '2024-11-02', 'Filippov Pavel Kirillovich', 'Fedotov Mikhail Pavlovich'),
     ('Innovation in Education Forum', '2024-11-03', 'Dolgov Nikolay Fedorovich', 'Kazakov Nikita Maksimovich'),
-    ('Smart Manufacturing Summit', '2024-11-04', 'Panteleev Alexey Bogdanovich', 'Fedotov Alexey Mikhailovich'),
-    ('Next-Gen Cybersecurity Forum', '2024-11-05', 'Kotov Maxim Ilyich', 'Sudakov Alexander Matveyevich'),
+    ('Smart Manufacturing Summit', '2024-11-06', 'Panteleev Alexey Bogdanovich', 'Fedotov Alexey Mikhailovich'),
+    ('Next-Gen Cybersecurity Forum', '2024-11-01', 'Kotov Maxim Ilyich', 'Sudakov Alexander Matveyevich'),
     ('Advanced Materials Conference', '2024-11-06', 'Nikitin Savva Lvovich', 'Isaev Savva Georgievich'),
     ('Digital Payments Forum', '2024-11-01', 'Filippov Pavel Kirillovich', 'Bogdanov Matvey Arsentievich'),
     ('Cloud Infrastructure Summit', '2024-11-02', 'Dolgov Nikolay Fedorovich', 'Nikiforov Alexander Andreevich');
+
+# drop table conferences;
