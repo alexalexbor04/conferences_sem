@@ -1,24 +1,17 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-        <title>Гистограмма</title>
-<!--        <style>-->
-<!--                body {-->
-<!--                        display: flex;-->
-<!--                        justify-content: center;-->
-<!--                        align-items: center;-->
-<!--                        height: 100vh;-->
-<!--                        margin: 0;-->
-<!--                }-->
-<!--                img {-->
-<!--                        display: block;-->
-<!--                        margin: auto;-->
-<!--                        max-width: 100%;-->
-<!--                        height: auto;-->
-<!--                }-->
-<!--        </style>-->
-</head>
-<body>
-<img th:src="@{${chart}}" alt="Гистограмма">
-</body>
+  <head>
+    <title>Гистограмма</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(211, 246, 152);
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <img th:src="@{${chart}}" alt="Гистограмма" />
+  </body>
 </html>
